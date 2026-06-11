@@ -3,6 +3,24 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+// find missing and repeating number in an array
+void findmissingandrepeating(vector<int>&nums){
+    int n = nums.size();
+    int hash[n+1]={0};
+    for(int i=0; i<n; i++){
+        hash[nums[i]]++;
+
+    }
+    int missing = -1 , repeating =-1;
+    for(int i=0; i<n; i++){
+        if(hash[i]==0){
+            missing = i;
+        }        if(hash[i]>1){
+            repeating = i;
+        }
+    }
+    cout << "Missing: " << missing << ", Repeating: " << repeating << endl;
+}
 // find the duplicate numbver
 void findduplicate(vector<int>&nums){
     unordered_set<int>st;
@@ -79,5 +97,7 @@ int main(){
     int mid = low + (high - low) / 2;
     int inversions = numberOfInversions(arr, arr.size());
     cout << "Number of inversions: " << inversions << endl;
+    vector<int>nums ={1, 2, 2, 4, 5,9,6,5};
+    findmissingandrepeating(nums);
 
 }

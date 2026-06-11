@@ -71,6 +71,8 @@ int main(){
     mergesortedarray(arr1, arr2);
     for(auto x : arr1) cout << x << " ";
 for(auto x : arr2) cout << x << " ";
+cout<<endl; 
+
     vector<vector<int>>intervals = {{1,3}, {2,6}, {8,10}, {15,18}};
     vector<vector<int>>mergedIntervals = mergeoverlap(intervals);
     for(const auto& interval : mergedIntervals){
